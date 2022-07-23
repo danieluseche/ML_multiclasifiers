@@ -1,0 +1,131 @@
+# Salidas:
+Se está interesado en saber los factores que afectan una 
+rehospitalizacion de los pacientes en un plazo definido de 30 días
+
+- readmitted {'<30', '>30', 'NO'}
+  - <30: 11357
+  - \>30: 35545
+  - NO: 54864
+
+- change {'Ch', 'No'}
+  - Ch: 47011
+  - No: 54755
+
+- diabetesMed {'Yes', 'No'}
+  - Yes: 78363
+  - No: 23403
+
+---
+
+# Atributos con valores "ruidosos" que deben eliminarse de la data
+
+
+- **weight** {'[25-50)', '[150-175)', '[175-200)', '>200', '?', '[125-150)', '[100-125)', '[50-75)', '[0-25)', '[75-100)'}
+  - [25-50): 97
+  - [150-175): 35
+  - [175-200): 11
+  - \>200: 3
+  - ?: 98569
+  - [125-150): 145
+  - [100-125): 625
+  - [50-75): 897
+  - [0-25): 48
+  - [75-100): 1336
+---
+
+- **payer_code** {'MC', 'DM', 'CH', 'CP', 'SI', 'CM', 'PO', 'MP', 'WC', 'HM', 'OT', 'MD', 'UN', 'FR', 'SP', 'BC', '?', 'OG'}
+  - MC: 32439
+  - DM: 549
+  - CH: 146
+  - CP: 2533
+  - SI: 55
+  - CM: 1937
+  - PO: 592
+  - MP: 79
+  - WC: 135
+  - HM: 6274
+  - OT: 95
+  - MD: 3532
+  - UN: 2448
+  - FR: 1
+  - SP: 5007
+  - BC: 4655
+  - ?: 40256
+  - OG: 1033
+---
+
+- **medical_specialty** {'Osteopath', 'Hospitalist', 'Radiologist', 'Hematology', 'Dermatology', 'Resident', 'Surgery-Colon&Rectal', 'Pediatrics-EmergencyMedicine', 'SurgicalSpecialty', 'InternalMedicine', 'ObstetricsandGynecology', 'Surgery-Cardiovascular', 'Pediatrics-AllergyandImmunology', 'Surgery-PlasticwithinHeadandNeck', 'Orthopedics-Reconstructive', 'Cardiology', 'Anesthesiology-Pediatric', 'Ophthalmology', 'Gastroenterology', 'Emergency/Trauma', 'Surgery-Neuro', 'Hematology/Oncology', 'Oncology', 'Surgery-Plastic', 'Surgery-Pediatric', 'Surgeon', 'Anesthesiology', 'SportsMedicine', 'Obsterics&Gynecology-GynecologicOnco', 'Dentistry', 'Cardiology-Pediatric', 'Family/GeneralPractice', 'AllergyandImmunology', 'Surgery-Vascular', 'Surgery-Cardiovascular/Thoracic', 'Perinatology', 'Pediatrics-Endocrinology', 'Pulmonology', 'Nephrology', '?', 'Psychiatry-Addictive', 'Rheumatology', 'Obstetrics', 'Neurophysiology', 'Pathology', 'OutreachServices', 'Pediatrics-Hematology-Oncology', 'Gynecology', 'Podiatry', 'Pediatrics', 'Speech', 'Otolaryngology', 'Pediatrics-Pulmonology', 'Neurology', 'Surgery-General', 'DCPTEAM', 'Pediatrics-Neurology', 'Endocrinology', 'PhysicalMedicineandRehabilitation', 'Psychiatry-Child/Adolescent', 'InfectiousDiseases', 'Psychiatry', 'Orthopedics', 'Surgery-Maxillofacial', 'Pediatrics-InfectiousDiseases', 'Endocrinology-Metabolism', 'PhysicianNotFound', 'Radiology', 'Pediatrics-CriticalCare', 'Surgery-Thoracic', 'Proctology', 'Urology', 'Psychology'}
+  - Osteopath: 39
+  - Hospitalist: 57
+  - Radiologist: 1140
+  - Hematology: 82
+  - Dermatology: 1
+  - Resident: 2
+  - Surgery-Colon&Rectal: 11
+  - Pediatrics-EmergencyMedicine: 3
+  - SurgicalSpecialty: 33
+  - InternalMedicine: 14635
+  - ObstetricsandGynecology: 671
+  - Surgery-Cardiovascular: 98
+  - Pediatrics-AllergyandImmunology: 3
+  - Surgery-PlasticwithinHeadandNeck: 1
+  - Orthopedics-Reconstructive: 1233
+  - Cardiology: 5352
+  - Anesthesiology-Pediatric: 19
+  - Ophthalmology: 38
+  - Gastroenterology: 564
+  - Emergency/Trauma: 7565
+  - Surgery-Neuro: 468
+  - Hematology/Oncology: 207
+  - Oncology: 348
+  - Surgery-Plastic: 41
+  - Surgery-Pediatric: 8
+  - Surgeon: 45
+  - Anesthesiology: 12
+  - SportsMedicine: 1
+  - Obsterics&Gynecology-GynecologicOnco: 25
+  - Dentistry: 4
+  - Cardiology-Pediatric: 7
+  - Family/GeneralPractice: 7440
+  - AllergyandImmunology: 7
+  - Surgery-Vascular: 533
+  - Surgery-Cardiovascular/Thoracic: 652
+  - Perinatology: 1
+  - Pediatrics-Endocrinology: 159
+  - Pulmonology: 871
+  - Nephrology: 1613
+  - ?: 49949
+  - Psychiatry-Addictive: 1
+  - Rheumatology: 17
+  - Obstetrics: 19
+  - Neurophysiology: 1
+  - Pathology: 17
+  - OutreachServices: 12
+  - Pediatrics-Hematology-Oncology: 4
+  - Gynecology: 58
+  - Podiatry: 100
+  - Pediatrics: 254
+  - Speech: 1
+  - Otolaryngology: 125
+  - Pediatrics-Pulmonology: 25
+  - Neurology: 203
+  - Surgery-General: 3099
+  - DCPTEAM: 6
+  - Pediatrics-Neurology: 10
+  - Endocrinology: 120
+  - PhysicalMedicineandRehabilitation: 391
+  - Psychiatry-Child/Adolescent: 7
+  - InfectiousDiseases: 37
+  - Psychiatry: 854
+  - Orthopedics: 1400
+  - Surgery-Maxillofacial: 11
+  - Pediatrics-InfectiousDiseases: 1
+  - Endocrinology-Metabolism: 8
+  - PhysicianNotFound: 11
+  - Radiology: 53
+  - Pediatrics-CriticalCare: 87
+  - Surgery-Thoracic: 109
+  - Proctology: 1
+  - Urology: 685
+  - Psychology: 101
+---
