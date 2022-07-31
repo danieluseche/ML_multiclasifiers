@@ -1,12 +1,12 @@
 import sys
 import numpy as np
-import pandas as pd 
+import pandas as pd
 
 data_file = "diabetic_data.csv"
 
-data = pd.read_csv(data_file, header = 0)
+data = pd.read_csv(data_file, header=0)
 
-# A quien le da mas diabetes? 
+# A quien le da mas diabetes?
 # print('Razas:')
 # races = set(data['race'])
 # for race in races:
@@ -21,6 +21,7 @@ data = pd.read_csv(data_file, header = 0)
 #     c = len(list(filter(lambda x: x == sex, data['gender'])))
 #     print(f'{sex}: {c}')
 
+
 def print_problem():
     for col in data.columns[49:]:
         posible_values = set(data[col])
@@ -30,15 +31,17 @@ def print_problem():
             print(f'  - {value}: {c}')
         print(80*'*')
 
+
 def main(col):
     print()
     posible_values = set(data[col])
     print(f'- **{col}** {posible_values}')
     for value in posible_values:
-        c = len(list(filter(lambda x: x == value, data[col])))
+        # c = len(list(filter(lambda x: x == value, data[col])))
+        c = [item for item in data[col]].count(value)
         print(f'  - {value}: {c}')
     print('---')
 
-if __name__=='__main__':
-    main(sys.argv[1])
 
+if __name__ == '__main__':
+    main(sys.argv[1])
