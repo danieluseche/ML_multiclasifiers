@@ -25,7 +25,7 @@ rehospitalizacion de los pacientes en un plazo definido de 30 días
   - [150-175): 35
   - [175-200): 11
   - \>200: 3
-  - ?: 98569
+  - ?: 98569 // 96.85% Faltante
   - [125-150): 145
   - [100-125): 625
   - [50-75): 897
@@ -50,7 +50,7 @@ rehospitalizacion de los pacientes en un plazo definido de 30 días
   - FR: 1
   - SP: 5007
   - BC: 4655
-  - ?: 40256
+  - ?: 40256  // 39.55% faltante
   - OG: 1033
 ---
 
@@ -94,7 +94,7 @@ rehospitalizacion de los pacientes en un plazo definido de 30 días
   - Pediatrics-Endocrinology: 159
   - Pulmonology: 871
   - Nephrology: 1613
-  - ?: 49949
+  - ?: 49949  //49.08% Faltante
   - Psychiatry-Addictive: 1
   - Rheumatology: 17
   - Obstetrics: 19
